@@ -1,0 +1,52 @@
+:root {
+  --background: rgb(211, 211, 211);
+  --outline: rgb(80, 80, 80);
+  --correct: rgb(94, 199, 94);;
+  --wrong: rgb(97, 97, 97);
+  --hint: rgb(231, 186, 101);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*align items in the y-axis*/
+    align-items: center; /*align items in the x-axis*/
+
+    height: 100vh;
+    background-color: var(--background);
+    margin: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+    width: 400px;
+    height: 450px;
+    background-color: var(--background);
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+    width: 350px;
+    height: 50px;
+    background-color: var(--background);
+}
+
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    outline: 2px solid var(--outline);
+    width: 50px;
+    height: 50px;
+    background-color: var(--background);
+}
