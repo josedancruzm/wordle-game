@@ -129,9 +129,8 @@ document.addEventListener('keydown', (event) => {
     }
     else if (key === 'ENTER') {
         if (cell === 5) {
-            wordCheker();
-            row++;
             cell = 0;
+            if (wordCheker() == true) row++;
         }
     }
 })
@@ -143,6 +142,12 @@ function wordCheker() {
         guess += allCells[row * 5 + i].textContent;
     }
     guess = guess.toLocaleLowerCase();
+
+    if (!word_bank.includes(guess)) {
+        alert("Word does not exist!");
+        cell = 5;
+        return;
+    }
 
     if (guess === chosen_word) {
         setTimeout(() => alert("Correct!"), 10);
@@ -165,4 +170,5 @@ function wordCheker() {
             allCells[row * 5 + i].classList.add('wrong');
         }
     }
+    return true;
 }
