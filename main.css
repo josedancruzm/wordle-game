@@ -1,20 +1,23 @@
 @import url('https://fonts.cdnfonts.com/css/monaco');
 
 :root {
-  --background: rgb(211, 211, 211);
-  --outline: rgb(112, 112, 112);
-  --correct: rgb(94, 199, 94);;
-  --wrong: rgb(97, 97, 97);
-  --hint: rgb(231, 186, 101);
-  --font: black;
+    --background: rgb(211, 211, 211);
+    --outline: rgb(112, 112, 112);
+    --correct: rgb(94, 199, 94);
+    --wrong: rgb(97, 97, 97);
+    --inserted: rgb(43, 43, 43);
+    --hint: rgb(231, 186, 101);
+    --font: black;
 }
 
-body{
+body {
     /*positioning*/
     display: flex;
     flex-direction: column;
-    justify-content: center; /*aligns items in the y-axis*/
-    align-items: center; /*aligns items in the x-axis*/
+    justify-content: center;
+    /*aligns items in the y-axis*/
+    align-items: center;
+    /*aligns items in the x-axis*/
 
     /*shaping*/
     height: 100vh;
@@ -23,7 +26,8 @@ body{
     background-color: var(--background);
     margin: 0;
 }
-.container{
+
+.container {
     /*positioning*/
     display: flex;
     flex-direction: column;
@@ -39,7 +43,7 @@ body{
     background-color: var(--background);
 }
 
-.row{
+.row {
     /*positioning*/
     display: flex;
     flex-direction: row;
@@ -55,7 +59,7 @@ body{
     background-color: var(--background);
 }
 
-.cell{
+.cell {
     /*positioning*/
     display: flex;
     justify-content: center;
@@ -80,6 +84,10 @@ body{
     animation-name: hiccup;
 }
 
+.inserted {
+    outline: 2px solid var(--inserted);
+}
+
 .correct {
     background-color: var(--correct);
 }
@@ -92,22 +100,20 @@ body{
     background-color: var(--wrong);
 }
 
-@keyframes spin{
-    0%{
+@keyframes spin {
+    0% {}
 
-    }
-    100%{
+    100% {
         transform: rotateY(360deg);
     }
 }
 
-@keyframes hiccup{
-    0%{
-        
-    }
-    50%{
+@keyframes hiccup {
+    0% {}
+
+    50% {
         scale: 1.05;
     }
-    100%{
-    }
+
+    100% {}
 }
