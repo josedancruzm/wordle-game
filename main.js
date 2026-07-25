@@ -68,16 +68,22 @@ function wordCheker() {
 
         //checks for letter in correct position (green)
         if (guess[i] === chosen_word[i]) {
+            allCells[row * 5 + i].style.animationDelay = (i * 400) + 'ms';
+            allCells[row * 5 + i].classList.add('flip');
             allCells[row * 5 + i].classList.add('correct');
         }
 
         //checks for misplaced letters (orange)
         if (chosen_word.includes(guess[i]) && guess[i] !== chosen_word[i]) {
+            allCells[row * 5 + i].style.animationDelay = (i * 400) + 'ms';
+            allCells[row * 5 + i].classList.add('flip');
             allCells[row * 5 + i].classList.add('hint');
         }
 
         //checks which letter is wrong
         if (!chosen_word.includes(guess[i]) && guess[i] !== chosen_word[i]) {
+            allCells[row * 5 + i].style.animationDelay = (i * 400) + 'ms';
+            allCells[row * 5 + i].classList.add('flip');
             allCells[row * 5 + i].classList.add('wrong');
         }
     }

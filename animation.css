@@ -1,0 +1,54 @@
+.hiccup {
+    /*animation*/
+    animation-duration: 0.2s;
+    animation-name: hiccup;
+}
+
+.flip {
+    /*animation*/
+    animation-duration: 1s;
+    animation-name: flip;
+}
+
+.incorrect {
+    animation-duration: 0.2s;
+    animation-name: incorrect;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(90deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes hiccup {
+    0% {}
+
+    50% {
+        scale: 1.25;
+    }
+
+    100% {}
+}
+
+@keyframes incorrect {
+    0% {}
+
+    25% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+
+    100% {}
+}
