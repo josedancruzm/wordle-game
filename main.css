@@ -15,16 +15,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /*aligns items in the y-axis*/
     align-items: center;
-    /*aligns items in the x-axis*/
 
     /*shaping*/
     height: 100vh;
+    margin: 0;
 
     /*coloring*/
     background-color: var(--background);
-    margin: 0;
 }
 
 .container {
