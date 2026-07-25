@@ -13,6 +13,7 @@ document.addEventListener('keydown', (event) => {
         if (cell < 5) {
             allCells[index].textContent = key;
             allCells[index].classList.add('inserted');
+            allCells[index].classList.add('hiccup');
             cell++;
         }
     }
@@ -22,6 +23,7 @@ document.addEventListener('keydown', (event) => {
             cell--;
             allCells[index - 1].textContent = '';
             allCells[index-1].classList.remove('inserted');
+            allCells[index-1].classList.remove('hiccup');
         }
     }
 

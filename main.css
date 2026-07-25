@@ -79,10 +79,6 @@ body {
     /*text*/
     font-size: 40px;
     font-family: 'Monaco', monospace;
-
-    /*animation*/
-    animation-duration: 0.2s;
-    animation-name: hiccup;
 }
 
 .inserted {
@@ -99,6 +95,12 @@ body {
 
 .wrong {
     background-color: var(--wrong);
+}
+
+.hiccup {
+    /*animation*/
+    animation-duration: 0.2s;
+    animation-name: hiccup;
 }
 
 .incorrect {
