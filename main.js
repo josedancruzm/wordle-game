@@ -65,26 +65,36 @@ function wordCheker() {
     }
 
     for (let i = 0; i < 5; i++) {
-
+        const currRow = row;
+        allCells[row * 5 + i].style.animationDelay = (i * 400) + 'ms';
+        
         //checks for letter in correct position (green)
         if (guess[i] === chosen_word[i]) {
-            allCells[row * 5 + i].style.animationDelay = (i * 400) + 'ms';
             allCells[row * 5 + i].classList.add('flip');
-            allCells[row * 5 + i].classList.add('correct');
+
+            setTimeout(()=>{
+                allCells[currRow * 5 + i].classList.add('correct');
+            }, (i * 400) + 500)
         }
 
         //checks for misplaced letters (orange)
         if (chosen_word.includes(guess[i]) && guess[i] !== chosen_word[i]) {
-            allCells[row * 5 + i].style.animationDelay = (i * 400) + 'ms';
             allCells[row * 5 + i].classList.add('flip');
-            allCells[row * 5 + i].classList.add('hint');
+            
+            setTimeout(()=>{
+                allCells[currRow * 5 + i].classList.add('hint');
+            }, (i * 400) + 500)
+
         }
 
         //checks which letter is wrong
         if (!chosen_word.includes(guess[i]) && guess[i] !== chosen_word[i]) {
-            allCells[row * 5 + i].style.animationDelay = (i * 400) + 'ms';
             allCells[row * 5 + i].classList.add('flip');
-            allCells[row * 5 + i].classList.add('wrong');
+            
+            setTimeout(()=>{
+                allCells[currRow * 5 + i].classList.add('wrong');
+            }, (i * 400) + 500)
+
         }
     }
     return true;
