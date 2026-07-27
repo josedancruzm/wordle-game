@@ -1,0 +1,38 @@
+.row-title {
+    /*positioning*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /*shaping*/
+    gap: 15px;
+    width: 350px;
+    height: 50px;
+
+    /*coloring*/
+    background-color: var(--background);
+}
+
+.cell-title {
+    /*positioning*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+
+    /*shaping*/
+    outline: 3px dashed var(--outline);
+    border-radius: 3px;
+    width: 75px;
+    height: 75px;
+
+    /*coloring*/
+    background-color: var(--background);
+    color: var(--font);
+    font-weight: bolder;
+
+    /*text*/
+    font-size: 60px;
+    font-family: 'Monaco', monospace;
+}

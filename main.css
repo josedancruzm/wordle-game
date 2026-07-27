@@ -25,7 +25,7 @@ body {
     background-color: var(--background);
 }
 
-.container {
+.body-container {
     /*positioning*/
     display: flex;
     flex-direction: column;

@@ -71,7 +71,7 @@ function wordCheker() {
     //checks if the word is correct
     if (guess === chosen_word) {
         solved = true;
-        alert("Correct!");
+        cell = allCells[allCells.length-1];
     }
 
     for (let i = 0; i < 5; i++) {

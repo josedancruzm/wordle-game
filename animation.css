@@ -1,3 +1,19 @@
+@keyframes hiccup-title {
+    0% {}
+
+    50% {
+        scale: 1.7;
+    }
+
+    100% {}
+}
+
+.hiccup-title {
+    /*animation*/
+    animation-duration: 0.2s;
+    animation-name: hiccup-title;
+}
+
 /*--- Hiccup Animation ---*/
 
 @keyframes hiccup {
@@ -62,7 +78,7 @@
 /*--- Floating Animation ---*/
 
 .floating {
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-name: floating;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
