@@ -9,9 +9,6 @@
     gap: 15px;
     width: 350px;
     height: 50px;
-
-    /*coloring*/
-    background-color: var(--background);
 }
 
 .cell-title {

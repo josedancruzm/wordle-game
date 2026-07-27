@@ -1,7 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/monaco');
 
 :root {
-    --background: rgb(211, 211, 211);
+    --background: rgb(211, 211, 211, 0.5);
     --outline: rgb(156, 156, 156);
     --correct: rgb(94, 199, 94);
     --wrong: rgb(141, 141, 141);
@@ -21,8 +21,9 @@ body {
     height: 100vh;
     margin: 0;
 
-    /*coloring*/
-    background-color: var(--background);
+    background-image: url('wordle-background.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .body-container {
@@ -36,9 +37,6 @@ body {
     gap: 15px;
     width: 400px;
     height: 450px;
-
-    /*coloring*/
-    background-color: var(--background);
 }
 
 .row {
@@ -52,9 +50,6 @@ body {
     gap: 15px;
     width: 350px;
     height: 50px;
-
-    /*coloring*/
-    background-color: var(--background);
 }
 
 .cell {
@@ -64,7 +59,7 @@ body {
     align-items: center;
 
     /*shaping*/
-    outline: 3px dashed var(--outline);
+    outline: 4px dashed var(--outline);
     border-radius: 3px;
     width: 50px;
     height: 50px;
@@ -73,6 +68,7 @@ body {
     background-color: var(--background);
     color: var(--font);
     font-weight: bolder;
+    backdrop-filter: blur(5px);
 
     /*text*/
     font-size: 40px;
@@ -80,7 +76,7 @@ body {
 }
 
 .inserted {
-    outline: 3px solid var(--inserted);
+    outline: 4px solid var(--inserted);
 }
 
 .correct {
