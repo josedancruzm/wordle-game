@@ -1,18 +1,27 @@
+/*--- Hiccup Animation ---*/
+
+@keyframes hiccup {
+    0% {}
+
+    50% {
+        scale: 1.25;
+    }
+
+    100% {}
+}
+
 .hiccup {
     /*animation*/
     animation-duration: 0.2s;
     animation-name: hiccup;
 }
 
+/*--- Flip Animation ---*/
+
 .flip {
     /*animation*/
     animation-duration: 1s;
     animation-name: flip;
-}
-
-.incorrect {
-    animation-duration: 0.2s;
-    animation-name: incorrect;
 }
 
 @keyframes flip {
@@ -29,14 +38,11 @@
     }
 }
 
-@keyframes hiccup {
-    0% {}
+/*--- Incorrect Animation ---*/
 
-    50% {
-        scale: 1.25;
-    }
-
-    100% {}
+.incorrect {
+    animation-duration: 0.2s;
+    animation-name: incorrect;
 }
 
 @keyframes incorrect {
@@ -51,4 +57,31 @@
     }
 
     100% {}
+}
+
+/*--- Floating Animation ---*/
+
+.floating {
+    animation-duration: 2s;
+    animation-name: floating;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(5px);
+    }
+
+    75% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }

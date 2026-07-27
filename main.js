@@ -1,14 +1,24 @@
 
 const allCells = document.querySelectorAll('.cell');
+const allCellWrappers = document.querySelectorAll('.cell-wrapper');
 
 let row = 0;
 let cell = 0;
 let solved = false;
 
+//block that gives each column its own staggered floating animation
+allCellWrappers.forEach((element, id) => {
+    element.classList.add('floating');
+    element.style.animationDelay = ((id % 5) * 200) + 'ms';
+});
+
+//block for reading keybinds
 document.addEventListener('keydown', (event) => {
     const key = event.key.toUpperCase();
     const index = row * 5 + cell;
 
+    //checks if letters A-Z are being pressed, if so fill the cells
+    //and add respective animations, like a darker outline (inserted) and impact (hiccup)
     if (/^[A-Z]$/.test(key)) {
         if (cell < 5) {
             allCells[index].textContent = key;
