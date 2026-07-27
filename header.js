@@ -3,12 +3,15 @@ const allTitleCellWrappers = document.querySelectorAll('.cell-wrapper-title');
 const title = ["W", "O", "R", "D", "L", "E"]
 
 //block that gives each column its own staggered floating animation
-allTitleCellWrappers.forEach((element, id) => {
-    element.classList.add('floating');
-    element.style.animationDelay = ((id % 6) * 200) + 'ms';
-});
 
 for (let i = 0; i < 6; i++) {
+}
+
+for (let i = 0; i < 6; i++) {
+
+    allTitleCellWrappers[i].classList.add('floating');
+    allTitleCellWrappers[i].style.animationDelay = ((i) * 200) + 'ms';
+
     setTimeout(() => {
         allTitleCells[i].textContent = title[i];
         allTitleCells[i].classList.add('inserted');
@@ -24,9 +27,9 @@ setTimeout(() => {
 
         setTimeout(() => {
             allTitleCells[i].classList.add('flip');
-        }, (i*200))
+        }, (i * 200))
         setTimeout(() => {
             allTitleCells[i].classList.add('correct');
-        }, ((i*200)+500))
+        }, ((i * 200) + 500))
     }
 }, (duration + 400))
