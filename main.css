@@ -1,10 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/monaco');
 
 :root {
-    --background: rgb(211, 211, 211, 0.5);
+    --background: rgba(253, 253, 253, 0.5);
     --outline: rgb(156, 156, 156);
     --correct: rgb(94, 199, 94);
-    --wrong: rgb(141, 141, 141);
+    --wrong: rgb(109, 109, 109);
     --inserted: rgb(43, 43, 43);
     --hint: rgb(231, 186, 101);
     --font: black;

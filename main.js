@@ -32,8 +32,8 @@ document.addEventListener('keydown', (event) => {
         if (cell > 0) {
             cell--;
             allCells[index - 1].textContent = '';
-            allCells[index-1].classList.remove('inserted');
-            allCells[index-1].classList.remove('hiccup');
+            allCells[index - 1].classList.remove('inserted');
+            allCells[index - 1].classList.remove('hiccup');
         }
     }
 
@@ -61,28 +61,37 @@ function wordCheker() {
     if (!word_bank.includes(guess)) {
         for (let i = 0; i < 5; i++) {
             allCells[row * 5 + i].classList.remove('incorrect');
-            void  allCells[row * 5 + i].offsetWidth;
+            void allCells[row * 5 + i].offsetWidth;
             allCells[row * 5 + i].classList.add('incorrect');
         }
         cell = 5;
         return;
     }
 
+
+    //this runs after checking that the word is acceptable
+    //if so, remove the incorrect animation from the class
+    //so that the flip animation can work,
+    //remember one animation at a time always
+    for (let i = 0; i < 5; i++) {
+        allCells[row * 5 + i].classList.remove('incorrect');
+    }
+
     //checks if the word is correct
     if (guess === chosen_word) {
         solved = true;
-        cell = allCells[allCells.length-1];
+        cell = allCells[allCells.length - 1];
     }
 
     for (let i = 0; i < 5; i++) {
         const currRow = row;
         allCells[row * 5 + i].style.animationDelay = (i * 400) + 'ms';
-        
+
         //checks for letter in correct position (green)
         if (guess[i] === chosen_word[i]) {
             allCells[row * 5 + i].classList.add('flip');
 
-            setTimeout(()=>{
+            setTimeout(() => {
                 allCells[currRow * 5 + i].classList.add('correct');
             }, (i * 400) + 500)
         }
@@ -90,8 +99,8 @@ function wordCheker() {
         //checks for misplaced letters (orange)
         if (chosen_word.includes(guess[i]) && guess[i] !== chosen_word[i]) {
             allCells[row * 5 + i].classList.add('flip');
-            
-            setTimeout(()=>{
+
+            setTimeout(() => {
                 allCells[currRow * 5 + i].classList.add('hint');
             }, (i * 400) + 500)
 
@@ -100,8 +109,8 @@ function wordCheker() {
         //checks which letter is wrong
         if (!chosen_word.includes(guess[i]) && guess[i] !== chosen_word[i]) {
             allCells[row * 5 + i].classList.add('flip');
-            
-            setTimeout(()=>{
+
+            setTimeout(() => {
                 allCells[currRow * 5 + i].classList.add('wrong');
             }, (i * 400) + 500)
 
