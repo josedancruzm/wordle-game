@@ -1,6 +1,7 @@
 const allTitleCells = document.querySelectorAll('.cell-title');
 const allTitleCellWrappers = document.querySelectorAll('.cell-wrapper-title');
-const title = ["W", "O", "R", "D", "L", "E"]
+const title = ["W", "O", "R", "D", "L", "E"];
+const background = ['correct', 'wrong', 'hint'];
 
 //block that gives each column its own staggered floating animation
 
@@ -29,7 +30,7 @@ setTimeout(() => {
             allTitleCells[i].classList.add('flip');
         }, (i * 200))
         setTimeout(() => {
-            allTitleCells[i].classList.add('correct');
+            allTitleCells[i].classList.add(background[Math.floor(Math.random() * background.length)]);
         }, ((i * 200) + 500))
     }
 }, (duration + 400))
