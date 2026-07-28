@@ -28,6 +28,7 @@
     background-color: var(--background);
     color: var(--font);
     font-weight: bolder;
+    backdrop-filter: blur(5px);
 
     /*text*/
     font-size: 60px;
