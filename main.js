@@ -118,3 +118,11 @@ function wordCheker() {
     }
     return true;
 }
+
+const backgrounds = [
+    'backgrounds/sonic.jpg',
+    'backgrounds/aquarium.jpg'
+];
+
+const random_background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+document.body.style.backgroundImage = `url('${random_background}')`;
