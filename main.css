@@ -2,11 +2,14 @@
 
 :root {
     --background: rgba(253, 253, 253, 0.5);
-    --outline: rgb(156, 156, 156);
+
+    --dashed-outline: rgb(156, 156, 156);    
+    --solid-outline: rgb(0, 0, 0);
+
     --correct: rgb(94, 199, 94);
-    --wrong: rgb(109, 109, 109);
-    --inserted: rgb(43, 43, 43);
+    --wrong: rgb(129, 129, 129);
     --hint: rgb(231, 186, 101);
+
     --font: black;
 }
 
@@ -21,7 +24,7 @@ body {
     height: 100vh;
     margin: 0;
 
-    background-image: url('wordle-background.jpg');
+    background-image: url('backgrounds/sonic.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -59,7 +62,7 @@ body {
     align-items: center;
 
     /*shaping*/
-    outline: 4px dashed var(--outline);
+    outline: 4px dashed var(--dashed-outline);
     border-radius: 3px;
     width: 50px;
     height: 50px;
@@ -76,7 +79,7 @@ body {
 }
 
 .inserted {
-    outline: 4px solid var(--inserted);
+    outline: 4px solid var(--solid-outline);
 }
 
 .correct {
