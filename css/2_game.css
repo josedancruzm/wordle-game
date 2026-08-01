@@ -1,9 +1,7 @@
 
-
-
 .game-grid {
     /*positioning*/
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -12,6 +10,8 @@
     gap: 15px;
     width: 400px;
     height: 450px;
+
+
 }
 
 .row {
