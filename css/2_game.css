@@ -50,6 +50,31 @@
     font-family: 'Monaco', monospace;
 }
 
+.level-counter, .highscore-counter{
+    /*positioning*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+
+    /*shaping*/
+    outline: 4px solid var(--font);
+    border-radius: 3px;
+    width: 250px;
+    height: 50px;
+
+    /*coloring*/
+    background-color: var(--background);
+    color: var(--font);
+    font-weight: bolder;
+    backdrop-filter: blur(5px);
+
+    /*text*/
+    font-size: 40px;
+    font-family: 'Monaco', monospace;
+
+}
+
 .inserted {
     outline: 4px solid var(--solid-outline);
 }
