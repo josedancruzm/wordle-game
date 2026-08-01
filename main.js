@@ -121,7 +121,8 @@ function wordCheker() {
 
 const backgrounds = [
     'backgrounds/sonic.jpg',
-    'backgrounds/aquarium.jpg'
+    'backgrounds/aquarium.jpg',
+    'backgrounds/wii.jpg'
 ];
 
 const random_background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
