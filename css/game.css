@@ -1,34 +1,7 @@
-@import url('https://fonts.cdnfonts.com/css/monaco');
 
-:root {
-    --background: rgba(253, 253, 253, 0.5);
 
-    --dashed-outline: rgb(156, 156, 156);    
-    --solid-outline: rgb(0, 0, 0);
 
-    --correct: rgb(94, 199, 94);
-    --wrong: rgb(129, 129, 129);
-    --hint: rgb(231, 186, 101);
-
-    --font: black;
-}
-
-body {
-    /*positioning*/
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    /*shaping*/
-    height: 100vh;
-    margin: 0;
-
-    background-size: cover;
-    background-position: center;
-}
-
-.body-container {
+.game-grid {
     /*positioning*/
     display: flex;
     flex-direction: column;
