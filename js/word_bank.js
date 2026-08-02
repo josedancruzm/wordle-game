@@ -235,4 +235,14 @@ const word_bank = [
 
 const random = Math.floor(Math.random() * word_bank.length);
 
-const chosen_word = word_bank[random];
+//const chosen_word = word_bank[random];
+const chosen_word = "apple";
+
+const backgrounds = [
+  'backgrounds/sonic.jpg',
+  'backgrounds/aquarium.jpg',
+  'backgrounds/wii.jpg'
+];
+
+const random_background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+document.body.style.backgroundImage = `url('${random_background}')`;

@@ -40,7 +40,14 @@ document.addEventListener('keydown', (event) => {
     else if (key === 'ENTER') {
         if (cell === 5) {
             cell = 0;
-            if (wordCheker() == true) row++;
+            const result = processGuess();
+
+            if (result === 'correct') {
+                solved = true;
+            } else if (result === 'incorrect') {
+                row++;
+            }
+
         }
 
         //informs the user what the word was if game is lost
@@ -50,12 +57,42 @@ document.addEventListener('keydown', (event) => {
     }
 })
 
-function wordCheker() {
+function buildGuess() {
     let guess = '';
     for (let i = 0; i < 5; i++) {
         guess += allCells[row * 5 + i].textContent;
     }
     guess = guess.toLocaleLowerCase();
+
+    return guess;
+
+}
+
+function revealGuess() {
+    for (let i = 0; i < 5; i++) {
+        const currRow = row;
+        allCells[row * 5 + i].style.animationDelay = (i * 400) + 'ms';
+        allCells[row * 5 + i].classList.add('flip');
+        let result;
+
+        //checks for letter in correct position (green)
+        if (guess[i] === chosen_word[i]) result = 'correct';
+
+        //checks for misplaced letters (orange)
+        else if (chosen_word.includes(guess[i]) && guess[i] !== chosen_word[i]) result = 'hint';
+
+        //checks which letter is wrong
+        else result = 'wrong';
+
+        setTimeout(() => {
+            allCells[currRow * 5 + i].classList.add(result);
+        }, (i * 400) + 500)
+    }
+}
+
+function processGuess() {
+
+    guess = buildGuess();
 
     //checks if the word is in the word bank
     if (!word_bank.includes(guess)) {
@@ -65,65 +102,24 @@ function wordCheker() {
             allCells[row * 5 + i].classList.add('incorrect');
         }
         cell = 5;
-        return;
+        return 'invalid';
     }
 
 
-    //this runs after checking that the word is acceptable
-    //if so, remove the incorrect animation from the class
-    //so that the flip animation can work,
-    //remember one animation at a time always
+    //this runs after checking that the word is acceptabl. if so, remove the incorrect animation from the class so that the flip animation can work. remember one animation at a time always
     for (let i = 0; i < 5; i++) {
         allCells[row * 5 + i].classList.remove('incorrect');
     }
+
+    revealGuess(guess);
 
     //checks if the word is correct
     if (guess === chosen_word) {
         solved = true;
         cell = allCells[allCells.length - 1];
+        return 'correct'
     }
 
-    for (let i = 0; i < 5; i++) {
-        const currRow = row;
-        allCells[row * 5 + i].style.animationDelay = (i * 400) + 'ms';
 
-        //checks for letter in correct position (green)
-        if (guess[i] === chosen_word[i]) {
-            allCells[row * 5 + i].classList.add('flip');
-
-            setTimeout(() => {
-                allCells[currRow * 5 + i].classList.add('correct');
-            }, (i * 400) + 500)
-        }
-
-        //checks for misplaced letters (orange)
-        if (chosen_word.includes(guess[i]) && guess[i] !== chosen_word[i]) {
-            allCells[row * 5 + i].classList.add('flip');
-
-            setTimeout(() => {
-                allCells[currRow * 5 + i].classList.add('hint');
-            }, (i * 400) + 500)
-
-        }
-
-        //checks which letter is wrong
-        if (!chosen_word.includes(guess[i]) && guess[i] !== chosen_word[i]) {
-            allCells[row * 5 + i].classList.add('flip');
-
-            setTimeout(() => {
-                allCells[currRow * 5 + i].classList.add('wrong');
-            }, (i * 400) + 500)
-
-        }
-    }
-    return true;
+    return 'incorrect';
 }
-
-const backgrounds = [
-    'backgrounds/sonic.jpg',
-    'backgrounds/aquarium.jpg',
-    'backgrounds/wii.jpg'
-];
-
-const random_background = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-document.body.style.backgroundImage = `url('${random_background}')`;

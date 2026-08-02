@@ -3,12 +3,13 @@
 :root {
     --background: rgba(253, 253, 253, 0.5);
 
-    --dashed-outline: rgb(156, 156, 156);    
+    --dashed-outline: rgb(156, 156, 156);
     --solid-outline: rgb(0, 0, 0);
 
     --correct: rgb(94, 199, 94);
     --wrong: rgb(129, 129, 129);
     --hint: rgb(231, 186, 101);
+    --fail: rgb(255, 80, 80);
 
     --font: black;
 }
