@@ -57,6 +57,7 @@ document.addEventListener('keydown', (event) => {
     }
 })
 
+//assemble guess from inserted cells
 function buildGuess() {
     let guess = '';
     for (let i = 0; i < 5; i++) {
@@ -66,28 +67,6 @@ function buildGuess() {
 
     return guess;
 
-}
-
-function revealGuess() {
-    for (let i = 0; i < 5; i++) {
-        const currRow = row;
-        allCells[row * 5 + i].style.animationDelay = (i * 400) + 'ms';
-        allCells[row * 5 + i].classList.add('flip');
-        let result;
-
-        //checks for letter in correct position (green)
-        if (guess[i] === chosen_word[i]) result = 'correct';
-
-        //checks for misplaced letters (orange)
-        else if (chosen_word.includes(guess[i]) && guess[i] !== chosen_word[i]) result = 'hint';
-
-        //checks which letter is wrong
-        else result = 'wrong';
-
-        setTimeout(() => {
-            allCells[currRow * 5 + i].classList.add(result);
-        }, (i * 400) + 500)
-    }
 }
 
 function processGuess() {
@@ -122,4 +101,26 @@ function processGuess() {
 
 
     return 'incorrect';
+}
+
+function revealGuess() {
+    for (let i = 0; i < 5; i++) {
+        const currRow = row;
+        allCells[row * 5 + i].style.animationDelay = (i * 400) + 'ms';
+        allCells[row * 5 + i].classList.add('flip');
+        let result;
+
+        //checks for letter in correct position (green)
+        if (guess[i] === chosen_word[i]) result = 'correct';
+
+        //checks for misplaced letters (orange)
+        else if (chosen_word.includes(guess[i]) && guess[i] !== chosen_word[i]) result = 'hint';
+
+        //checks which letter is wrong
+        else result = 'wrong';
+
+        setTimeout(() => {
+            allCells[currRow * 5 + i].classList.add(result);
+        }, (i * 400) + 500)
+    }
 }
